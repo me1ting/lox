@@ -19,15 +19,3 @@ func main() {
 		lox.Prompt()
 	}
 }
-
-type Scanner struct{}
-
-func NewScanner(path string) Scanner {
-	return Scanner{}
-}
-
-func (s *Scanner) ScanTokens() []Token {
-	return nil
-}
-
-type Token struct{}
