@@ -1,4 +1,4 @@
-package main
+package lox
 
 import (
 	"fmt"
@@ -51,7 +51,7 @@ func (s *Scanner) ScanTokens() []*Token {
 		s.start = s.current
 		s.scanToken()
 	}
-	s.tokens = append(s.tokens, &Token{tokenType: EOF, lexeme: "", literal: nil, line: s.line})
+	s.tokens = append(s.tokens, &Token{TokenType: EOF, Lexeme: "", Literal: nil, Line: s.line})
 	return s.tokens
 }
 
@@ -139,7 +139,7 @@ func (s *Scanner) advance() byte {
 
 func (s *Scanner) addToken(tokenType TokenType, literal any) {
 	text := s.source[s.start:s.current]
-	s.tokens = append(s.tokens, &Token{tokenType: tokenType, lexeme: text, literal: literal, line: s.line})
+	s.tokens = append(s.tokens, &Token{TokenType: tokenType, Lexeme: text, Literal: literal, Line: s.line})
 }
 
 func (s *Scanner) match(c byte) bool {

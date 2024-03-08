@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"lox-go/lox"
 	"os"
 )
 
@@ -12,7 +13,7 @@ func main() {
 		os.Exit(64)
 	}
 
-	lox := NewLox()
+	lox := lox.NewLox()
 	if len(args) == 1 {
 		lox.RunFile(args[0])
 	} else {
